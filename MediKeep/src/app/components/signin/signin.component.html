@@ -1,0 +1,36 @@
+<div class="card shadow  position-absolute top-50 start-50 translate-middle" style="width: 500px;">
+    <div class="card-header" style="background-color: #4082D4;color: azure;">
+        Sign In
+      </div>
+    <div class="card-body ">
+        <div class="form-signin ">
+            <form [formGroup]="signinForm" (ngSubmit)="loginUser()">
+              <div class="form-floating mb-3">
+                <input
+                id="txtEmail"
+                  type="email"
+                  class="form-control form-control-sm"
+                  formControlName="email"
+                  placeholder="Enter email"
+                  required
+                />
+                <label for="txtEmail">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                id="txtPass"
+                  type="password"
+                  class="form-control form-control-sm"
+                  formControlName="password"
+                  placeholder="Password"
+                />
+                <label for="txtPass">Password</label>
+              </div>
+              
+              <div class="d-grid float-end">
+                <button type="submit" class="btn btn-primary" style="width: 120px;">Sign in</button>
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
