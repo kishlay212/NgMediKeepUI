@@ -1,0 +1,6 @@
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color: azure;
+}
+.nav-link {
+    color: azure;
+}
