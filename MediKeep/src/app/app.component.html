@@ -1,5 +1,5 @@
 
-<nav class="navbar shadow-sm navbar-expand-lg" style="background-color: #4082D4; color: #fff;">
+<nav class="navbar shadow-sm navbar-expand-lg" style="background-color: #3f51b5; color: #fff;">
   <div class="container-fluid">
     <a class="navbar-brand" href="/dashboard">Medi Keep</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
       <span class="navbar-text" *ngIf="this.authService.isLoggedIn">
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome User
+            Welcome {{usename}}
           </a>
         
           <ul class="dropdown-menu">

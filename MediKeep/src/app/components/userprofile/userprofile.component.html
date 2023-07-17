@@ -1,9 +1,27 @@
 <div class="container">
-    <div class="row">
+  <div class="card shadow w-75 m-auto">
+    <div class="card-header">
+      <h4 style="color: #4082D4;">User Profile</h4>
+    </div>
+    <div class="card-body">
       <div class="inner-main">
-        <h2 class="mb-4">User Profile</h2>
-        <p><strong>Name:</strong> {{ this.currentUser.name }}</p>
-        <p><strong>Email:</strong> {{ this.currentUser.email }}</p>
+        <div class="row mb-1">
+          <div class="col-md-2 col-sm-4">
+            <label>Name:</label>
+          </div>
+          <div class="col-md-4 col-sm-8">
+            <input type="text" id="txtUserName" class="form-control" value="{{ this.currentUser.name }}"/>  
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-md-2 col-sm-4">
+            <label>Email:</label>
+          </div>
+          <div class="col-md-4 col-sm-8">
+            <input type="email" id="txtUserName" class="form-control" value="{{ this.currentUser.email }}"/>  
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>

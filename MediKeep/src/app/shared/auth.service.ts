@@ -28,6 +28,7 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
         localStorage.setItem('userid', res.userid);
+        console.log(res.token)
           this.router.navigate(['dashboard']);
       });
   }
