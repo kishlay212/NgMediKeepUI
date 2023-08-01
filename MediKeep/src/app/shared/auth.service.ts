@@ -22,15 +22,8 @@ export class AuthService {
     return this.http.post(api, user).pipe(catchError(this.handleError));
   }
   // Sign-in
-  signIn(user: User) {
-    return this.http
-      .post<any>(`${this.endpoint}/Login/Authorize`, user)
-      .subscribe((res: any) => {
-        localStorage.setItem('access_token', res.token);
-        localStorage.setItem('userid', res.userid);
-        console.log(res.token)
-          this.router.navigate(['dashboard']);
-      });
+  signIn(user: User): Observable<any> {
+     return this.http.post<any>(`${this.endpoint}/Login/Authorize`, user);
   }
   getToken() {
     return localStorage.getItem('access_token');

@@ -20,9 +20,21 @@ export class SigninComponent implements OnInit {
       password: [''],
     });
   }
+  authError: boolean = false;
+  errMsg: any = '';
   ngOnInit() {}
   loginUser() {
-    this.authService.signIn(this.signinForm.value);
-    
+    this.authService.signIn(this.signinForm.value).subscribe(
+      (res: any) => {
+        localStorage.setItem('access_token', res.token);
+        localStorage.setItem('userid', res.userid);
+        this.router.navigate(['dashboard']);
+      },
+      (error) => {
+        this.authError = true;
+        this.errMsg = "Login failed. Please check your credentials.";
+        
+      }
+    );
   }
 }

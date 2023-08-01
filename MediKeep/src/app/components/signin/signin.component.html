@@ -1,8 +1,13 @@
-<div class="card shadow  position-absolute top-50 start-50 translate-middle" style="width: 500px;">
+
+<div  class="card shadow  position-absolute top-50 start-50 translate-middle" style="width: 500px;">
     <div class="card-header" style="background-color: #4082D4;color: azure;">
         Sign In
       </div>
     <div class="card-body ">
+      <div *ngIf="authError" class="alert alert-danger alert-dismissible" style="z-index: 9999;" role="alert">
+        <div>{{ errMsg }}</div>
+        <button type="button" class="btn-close" (click)="authError = false" aria-label="Close"></button>
+        </div>
         <div class="form-signin ">
             <form [formGroup]="signinForm" (ngSubmit)="loginUser()">
               <div class="form-floating mb-3">
@@ -33,4 +38,16 @@
             </form>
           </div>
     </div>
-  </div>
+  <!-- </div>
+  <div *ngIf="authError" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1200" aria-live="polite" aria-atomic="true">
+  <ngb-toast
+	*ngIf="authError"
+	header="Error"
+	[delay]="5000"
+	[autohide]="true"
+	(hide)="authError = false;"
+	[class.bg-danger]="authError"
+>
+	<div *ngIf="authError">{{ errMsg }}</div>
+</ngb-toast>
+</div> -->

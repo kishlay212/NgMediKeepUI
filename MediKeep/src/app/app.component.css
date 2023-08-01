@@ -4,3 +4,7 @@
 .nav-link {
     color: azure;
 }
+.bg-Gradient-Custom{
+    background: radial-gradient(circle, rgba(255, 255, 255,0.2) 0%, rgba(255, 255, 255, 0) 100%) !important; 
+    background-color: rgb(18, 45, 66) !important;
+}
