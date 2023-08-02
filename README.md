@@ -27,8 +27,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ### ngx-spinner
-For Documentation visit below link:
-https://www.npmjs.com/package/ngx-spinner#stackblitz-demo
+For Documentation visit link: [ngx spinner Demo](https://www.npmjs.com/package/ngx-spinner#stackblitz-demo)
+
+### ng-bootstrap
+For Documentation visit link: [ng-Bootstrap Demo](https://ng-bootstrap.github.io/#/components/accordion/overview)
 
 ## Contribution Guidelines
 
