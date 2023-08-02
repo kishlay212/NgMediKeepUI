@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Contribution Guidelines
+
+Thank you for considering contributing to our project! Here are some guidelines to follow:
+
+### Reporting Issues
+
+If you encounter any issues or have suggestions, please feel free to report them. Provide as much detail as possible, including steps to reproduce the issue.
+
+### Submitting Pull Requests
+
+1. Fork the repository and create your branch from `main`.
+2. Make your changes and ensure they are well-tested.
+3. Open a pull request, describing the changes you've made.
+4. Ensure your code follows the project's coding style and conventions.
