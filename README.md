@@ -34,11 +34,11 @@ https://www.npmjs.com/package/ngx-spinner#stackblitz-demo
 
 Thank you for considering contributing to our project! Here are some guidelines to follow:
 
-### Reporting Issues
+## Reporting Issues
 
 If you encounter any issues or have suggestions, please feel free to report them. Provide as much detail as possible, including steps to reproduce the issue.
 
-### Submitting Pull Requests
+## Submitting Pull Requests
 
 1. Fork the repository and create your branch from `main`.
 2. Make your changes and ensure they are well-tested.
