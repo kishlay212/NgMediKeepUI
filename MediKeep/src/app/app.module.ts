@@ -12,6 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PatientsComponent } from './components/patients/patients.component';
 import { NgbToastModule,NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgbToastModule,NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbToastModule,
-    NgbAlertModule
+    NgbAlertModule,
+    NgxSpinnerModule.forRoot({type: 'ball-scale-multiple'})
   ],
   providers: [
     {
