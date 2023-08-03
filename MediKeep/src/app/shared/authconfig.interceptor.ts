@@ -16,7 +16,9 @@ export class AuthInterceptor implements HttpInterceptor {
         });
         return next.handle(req).pipe(
             finalize(()=>{
-                this.spinner.hide();
+                setTimeout(() => {
+                    this.spinner.hide();
+                }, 2000);
             })
         );
     }
