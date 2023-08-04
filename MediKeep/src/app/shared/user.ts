@@ -4,7 +4,7 @@ export class User {
     email?: String;
     password?: String;
     designation?: String;
-    location?: String;
+    adderess?: String;
     mobile?: String;
     profileImage?: string;
   }

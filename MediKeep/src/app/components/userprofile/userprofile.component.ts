@@ -63,6 +63,9 @@ export class UserprofileComponent implements OnInit {
           this.showAlert = true
           this.errMsg ='Image uploaded successfully:';
           this.modalService.dismissAll();
+          this.authService.getUserProfile(this.signinForm._id).subscribe((res) => {
+            this.currentUser = res;
+          });
           // Add any further actions you want to perform
         },
         (error) => {
