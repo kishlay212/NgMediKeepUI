@@ -6,4 +6,5 @@ export class User {
     designation?: String;
     location?: String;
     mobile?: String;
+    profileImage?: string;
   }
