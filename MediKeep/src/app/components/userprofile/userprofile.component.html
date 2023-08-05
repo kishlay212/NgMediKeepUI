@@ -48,45 +48,45 @@
             <div class="card  shadow mb-4">
                 <div class="card-header bg-primary bg-gradient text-white">User Details</div>
                 <div class="card-body bg-light bg-gradient">
-                    <form>
+                    <form #userDetail="ngForm" (ngSubmit)="updateUser()">
                         <!-- Form Group (username)-->
                         <div class="mb-3">
-                            <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ this.currentUser.name }}">
+                            <label class="small mb-1" for="inputUsername">Full Name</label>
+                            <input class="form-control" name="name" id="inputUsername" type="text" placeholder="Enter your full name" required [(ngModel)]="this.currentUser.name" >
                         </div>
                         <!-- Form Row        -->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (organization name)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputOrgName">Designation</label>
-                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your Designation" value="{{this.currentUser.designation}}">
+                                <input class="form-control" name="designation" id="inputOrgName" type="text" placeholder="Enter your Designation" [(ngModel)]="this.currentUser.designation" >
                             </div>
                             <!-- Form Group (location)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Address</label>
-                                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="{{this.currentUser.adderess}}">
+                                <input class="form-control" name="adderess" id="inputLocation" type="text" placeholder="Enter your location" [(ngModel)]="this.currentUser.adderess" >
                             </div>
                         </div>
                         <!-- Form Group (email address)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="{{ this.currentUser.email }}">
+                            <input class="form-control" name="email" id="inputEmailAddress" type="email" required placeholder="Enter your email address" [(ngModel)]="this.currentUser.email" >
                         </div>
                         <!-- Form Row-->
                         <div class="row gx-3 mb-3">
                             <!-- Form Group (phone number)-->
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Phone number</label>
-                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{this.currentUser.mobile}}">
+                                <input class="form-control" name="mobile" id="inputPhone" type="tel" required placeholder="Enter your phone number" [(ngModel)]="this.currentUser.mobile" >
                             </div>
                             <!-- Form Group (birthday)-->
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <label class="small mb-1" for="inputBirthday">Date of birth</label>
-                                <input class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Enter your birthday" value="06/10/1999">
-                            </div>
+                                <input class="form-control" name="dob" id="inputBirthday" type="date" placeholder="Enter your birthday" value="06/10/1999" ngModel>
+                            </div> -->
                         </div>
                         <!-- Save changes button-->
-                        <button class="btn btn-primary" type="button">Save changes</button>
+                        <button class="btn btn-primary" type="submit">Save changes</button>
                     </form>
                 </div>
             </div>

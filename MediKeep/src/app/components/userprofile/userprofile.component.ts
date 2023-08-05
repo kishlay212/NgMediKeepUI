@@ -82,4 +82,20 @@ export class UserprofileComponent implements OnInit {
     };
     reader.readAsDataURL(file);
   }
+  updateUser(){
+    console.log(this.currentUser);
+     this.userService.updateUserDetail(this.currentUser).subscribe(
+        (response)=>{
+          this.showAlert = true
+          this.errMsg ='Updated successfully';
+          this.authService.getUserProfile(this.signinForm._id).subscribe((res) => {
+            this.currentUser = res;
+          });
+        },
+        (error) => {
+          this.showAlert = true
+          this.errMsg ='Error updating details';
+        }
+       );
+  }
 }

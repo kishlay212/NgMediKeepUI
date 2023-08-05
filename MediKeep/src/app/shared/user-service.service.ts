@@ -25,4 +25,8 @@ export class UserServiceService {
     }
     return this.http.post(api, user);
   }
+  updateUserDetail(user: User): Observable<any>{
+    let api = `${this.endpoint}/UpdateUserData`;
+    return this.http.post(api, user);
+  }
 }
