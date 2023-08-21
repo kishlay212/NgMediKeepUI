@@ -5,13 +5,15 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
 import { AuthGuard } from "./shared/auth.guard";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PatientsComponent } from './components/patients/patients.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/log-in', pathMatch: 'full' },
   { path: 'log-in', component: SigninComponent },
   { path: 'user-profile/:id', component: UserprofileComponent, canActivate: [AuthGuard] },
   {path: 'dashboard' , component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'patient', component: PatientsComponent, canActivate: [AuthGuard]}
+  {path: 'patient', component: PatientsComponent, canActivate: [AuthGuard]},
+  {path: 'users', component: UsersComponent, canActivate: [AuthGuard]}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatSortModule } from '@angular/material/sort';
     SigninComponent,
     UserprofileComponent,
     DashboardComponent,
-    PatientsComponent
+    PatientsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
