@@ -19,6 +19,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { UsersComponent } from './components/users/users.component';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -41,8 +44,11 @@ import { UsersComponent } from './components/users/users.component';
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatButtonModule,
     MatInputModule,
+    MatIconModule,
     MatSortModule,
+    MatRippleModule,
     NgxSpinnerModule.forRoot({type: 'ball-scale-multiple'})
   ],
   providers: [

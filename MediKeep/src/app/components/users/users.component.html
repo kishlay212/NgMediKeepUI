@@ -1,6 +1,8 @@
 <div class="container">
     <div class="card shadow m-auto">
-      <div class="card-header bg-primary bg-gradient text-white"> <h4>Users</h4>
+      <div class="card-header bg-primary bg-gradient text-white">
+         <h4 class="float-start">Users</h4>
+         <button class="float-end" type="button" mat-raised-button (click)="openModal(modalContent)">Add</button>
       </div>
       <div class="card-body">
         <mat-form-field>
@@ -31,7 +33,7 @@
               </ng-container>
               <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef > Action </th>
-                <td mat-cell *matCellDef="let row"> <a class="btn btn-sm btn-primary" [routerLink]="['/user-profile/',row.id]">Edit</a> </td>
+                <td mat-cell *matCellDef="let row"> <a mat-mini-fab color="primary" class="btn btn-sm btn-primary" [routerLink]="['/user-profile/',row.id]"><mat-icon>edit</mat-icon></a> </td>
               </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -48,3 +50,78 @@
       </div>
     </div>
 </div>
+<ng-template #modalContent let-modal>
+    <div class="modal-header bg-primary bg-gradient text-white">
+      <h4 class="modal-title" id="modal-image-upload">Add User</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click');">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="modal-body bg-light bg-gradient">
+      <!-- Modal content here -->
+      <div *ngIf="authError" class="alert alert-danger alert-dismissible" style="z-index: 9999;" role="alert">
+        <div>{{ errMsg }}</div>
+        <button type="button" class="btn-close" (click)="authError = false" aria-label="Close"></button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 ">
+            <label class="text-primary mb-1 align-middle p-2">Upload Image <span class="text-danger">(png or jpg format allowed)</span> </label>
+            <!-- <input type="file" class="form-control align-middle" id="flImage" name="profileImage" style="width: 350px;" (change)="onFileSelected($event)"/> -->
+            <input type="file" class="form-control align-middle" id="flImage" #userPhoto name="profileImage" style="width: 350px;" (change)="onFileSelected($event)" />
+
+          </div>
+          <div class="col-md-6 position-relative">
+            <div class="card bg-light bg-gradient shadow mb-4 mt-4" *ngIf="validUpload" style="width: 210px; height: 210px;">
+              <img class="m-auto" src="{{this.base64String}}" style="width: 200px; height: 200px;">
+          <button *ngIf="validUpload" mat-mini-fab type="button" (click)="this.base64String = ''; this.validUpload = false; this.userPhoto.value = '';" class="position-absolute bottom-0 end-0" color="warn"><mat-icon>delete</mat-icon></button>
+          </div>
+          </div>
+        </div>
+        <form #userDetail="ngForm" id="ngForm"  (ngSubmit)="updateUser()">
+            <!-- Form Group (username)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername">Full Name</label>
+                <input class="form-control" name="name" id="inputUsername" type="text" placeholder="Enter your full name" required [(ngModel)]="this.currentUser.name" >
+            </div>
+            <!-- Form Row        -->
+            <div class="row gx-3 mb-3">
+                <!-- Form Group (organization name)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputOrgName">Designation</label>
+                    <input class="form-control" name="designation" id="inputOrgName" type="text" placeholder="Enter your Designation" [(ngModel)]="this.currentUser.designation" >
+                </div>
+                <!-- Form Group (location)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputLocation">Address</label>
+                    <input class="form-control" name="adderess" id="inputLocation" type="text" placeholder="Enter your location" [(ngModel)]="this.currentUser.adderess" >
+                </div>
+            </div>
+            <!-- Form Group (email address)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                <input class="form-control" name="email" id="inputEmailAddress" type="email" required placeholder="Enter your email address" [(ngModel)]="this.currentUser.email" >
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+                <!-- Form Group (phone number)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputPhone">Phone number</label>
+                    <input class="form-control" name="mobile" id="inputPhone" type="tel" required placeholder="Enter your phone number" [(ngModel)]="this.currentUser.mobile" >
+                </div>
+                <!-- Form Group (birthday)-->
+                <!-- <div class="col-md-6">
+                    <label class="small mb-1" for="inputBirthday">Date of birth</label>
+                    <input class="form-control" name="dob" id="inputBirthday" type="date" placeholder="Enter your birthday" value="06/10/1999" ngModel>
+                </div> -->
+            </div>
+            <!-- Save changes button-->
+            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" form="ngForm" [disabled]="!userDetail.form.valid" >Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Cancel');">Close</button>
+      <!-- Additional modal footer buttons -->
+    </div>
+  </ng-template>
