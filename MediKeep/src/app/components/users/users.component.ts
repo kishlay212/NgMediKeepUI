@@ -12,7 +12,7 @@ import { UserServiceService } from 'src/app/shared/user-service.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'email','adderess'];
+  displayedColumns: string[] = ['id', 'name', 'email','adderess','action'];
   dataSource: MatTableDataSource<User>;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -20,7 +20,6 @@ export class UsersComponent implements AfterViewInit {
     // Create 100 users
     this.dataSource = new MatTableDataSource();
     this.userService.getAllUsers().subscribe((res) => {
-      console.log(res);
       this.dataSource = new MatTableDataSource(res);
     });
     // Assign the data to the data source for the table to render
