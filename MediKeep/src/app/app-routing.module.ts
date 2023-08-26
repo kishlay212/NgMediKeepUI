@@ -9,7 +9,7 @@ import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/log-in', pathMatch: 'full' },
-  { path: 'log-in', component: SigninComponent },
+  { path: 'log-in', component: SigninComponent},
   { path: 'user-profile/:id', component: UserprofileComponent, canActivate: [AuthGuard] },
   {path: 'dashboard' , component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'patient', component: PatientsComponent, canActivate: [AuthGuard]},

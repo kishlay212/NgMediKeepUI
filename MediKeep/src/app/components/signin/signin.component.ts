@@ -22,7 +22,11 @@ export class SigninComponent implements OnInit {
   }
   authError: boolean = false;
   errMsg: any = '';
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.authService.isLoggedIn){
+      this.router.navigate(['dashboard']);
+    }
+  }
   loginUser() {
     this.authService.signIn(this.signinForm.value).subscribe(
       (res: any) => {

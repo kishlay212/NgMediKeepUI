@@ -23,7 +23,9 @@ export class AuthGuard {
     if (this.authService.isLoggedIn !== true) {
       window.alert('Access not allowed!');
       this.router.navigate(['log-in']);
-    }
+      return false;
+    }else{
     return true;
+    }
   }
 }
